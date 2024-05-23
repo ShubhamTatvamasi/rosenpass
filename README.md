@@ -9,3 +9,8 @@ Extract:
 ```bash
 sudo tar -xf rosenpass-x86_64-linux-0.2.1.tar -C /usr/local/
 ```
+
+Install wg-tools:
+```bash
+sudo apt install wireguard-tools resolvconf
+```
