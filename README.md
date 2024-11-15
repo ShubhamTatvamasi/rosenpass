@@ -1,6 +1,6 @@
 # rosenpass
 
-https://rosenpass.eu/#start
+https://rosenpass.eu/docs/rosenpass-tool/start/
 
 Download rosenpass:
 ```bash
