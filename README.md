@@ -16,3 +16,40 @@ Install wg-tools:
 ```bash
 sudo apt install wireguard-tools resolvconf
 ```
+
+### Server
+
+Generate secret keys for server:
+```bash
+rp genkey server.rosenpass-secret
+```
+
+Extract the public keys:
+```bash
+rp pubkey server.rosenpass-secret server.rosenpass-public
+```
+
+
+Copy each -public directory to the other peer
+```bash
+scp -r server.rosenpass-public user@client:/path/to/directory
+```
+
+
+### Client
+
+Generate secret keys for client:
+```bash
+rp genkey client.rosenpass-secret
+```
+
+Extract the public keys:
+```bash
+rp pubkey client.rosenpass-secret client.rosenpass-public
+```
+
+Copy each -public directory to the other peer
+```bash
+scp -r client.rosenpass-public user@server:/path/to/directory
+```
+

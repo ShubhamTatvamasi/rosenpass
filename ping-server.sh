@@ -1,1 +1,1 @@
-ping fe80::1%rosenpass0
+ping 10.10.10.1%rosenpass0
