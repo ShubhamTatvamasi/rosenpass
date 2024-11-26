@@ -1,1 +1,1 @@
-ping 10.10.10.2%rosenpass0
+ping 10.10.10.2
