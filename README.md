@@ -53,3 +53,21 @@ Copy each -public directory to the other peer
 scp -r client.rosenpass-public user@server:/path/to/directory
 ```
 
+---
+
+
+Install zip:
+```bash
+sudo apt install zip -y
+```
+
+Zip client secret and public key:
+```bash
+zip -r client_data.zip client.rosenpass-public/ client.rosenpass-secret/
+```
+
+Copy the `client_data.zip` locally:
+```bash
+scp ubuntu@192.168.1.153:/home/ubuntu/rosenpass/client_data.zip .
+```
+
