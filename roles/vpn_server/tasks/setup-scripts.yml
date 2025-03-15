@@ -1,0 +1,12 @@
+---
+- name: Setup sqvpn-server-start.sh script
+  template:
+    src: sqvpn-server-start.sh.j2
+    dest: "/usr/local/bin/sqvpn-server-start.sh"
+    mode: 0755
+
+- name: Setup sqvpn-server-stop.sh script
+  template:
+    src: sqvpn-server-stop.sh.j2
+    dest: "/usr/local/bin/sqvpn-server-stop.sh"
+    mode: 0755

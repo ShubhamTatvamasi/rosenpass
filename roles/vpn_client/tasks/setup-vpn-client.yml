@@ -1,0 +1,16 @@
+---
+- name: Setup sqvpn-client service file
+  template:
+    src: sqvpn-client.service.j2
+    dest: "/etc/systemd/system/sqvpn-client.service"
+
+- name: Disable service sqvpn-client
+  service:
+    name: sqvpn-client
+    enabled: no
+
+- name: Stopped service sqvpn-client
+  service:
+    name: sqvpn-client
+    state: stopped
+  

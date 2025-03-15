@@ -1,5 +1,7 @@
 ---
 - import_tasks: generate-server-keys.yml
   become: yes
-- import_tasks: start-vpn-server.yml
+- import_tasks: setup-scripts.yml
+  become: yes
+- import_tasks: setup-vpn-server.yml
   become: yes

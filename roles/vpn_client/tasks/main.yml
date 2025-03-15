@@ -1,3 +1,7 @@
 ---
 - import_tasks: generate-client-keys.yml
   become: yes
+- import_tasks: setup-scripts.yml
+  become: yes
+- import_tasks: setup-vpn-client.yml
+  become: yes

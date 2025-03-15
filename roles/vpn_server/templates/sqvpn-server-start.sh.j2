@@ -1,0 +1,5 @@
+#!/bin/bash
+
+systemctl restart sqvpn-server
+sleep 1
+ip a add {{ server_ip }}/{{ cidr }} dev quantum-vpn0

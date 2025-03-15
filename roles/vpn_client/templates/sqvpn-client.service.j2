@@ -1,0 +1,20 @@
+[Unit]
+Description=sqvpn
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/opt/sqvpn
+
+ExecStart=sqvpn \
+  exchange client.vpn-secret \
+  dev quantum-vpn0 \
+  peer server.vpn-public \
+  endpoint {{ vpn_server_ip }}:{{ vpn_server_port }} \
+  allowed-ips {{ allowed_ips }}/{{ cidr }}
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
