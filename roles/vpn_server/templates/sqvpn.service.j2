@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=root
 WorkingDirectory=/var/opt/sqvpn
-ExecStart=sqvpn exchange server.vpn-secret dev quantum-vpn0 listen $(hostname -I | awk '{print $1}'):9999 peer client.vpn-public allowed-ips 10.10.10.0/24
-ExecStartPost=ip a add 10.10.10.1/24 dev quantum-vpn0
+ExecStart=/usr/local/bin/sqvpn-start.sh
 Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
