@@ -1,0 +1,13 @@
+---
+- import_tasks: extract-public-keys-server.yml
+  when: "'server' in group_names"
+  become: yes
+- import_tasks: extract-public-keys-client.yml
+  when: "'client' in group_names"
+  become: yes
+- import_tasks: exchange-public-keys-server.yml
+  when: "'server' in group_names"
+  become: yes
+- import_tasks: exchange-public-keys-client.yml
+  when: "'client' in group_names"
+  become: yes

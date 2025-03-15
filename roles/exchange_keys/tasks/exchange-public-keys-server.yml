@@ -1,0 +1,15 @@
+---
+- name: Create VPN client public keys directory
+  file:
+    path: /var/opt/sqvpn/client.vpn-public/
+    state: directory
+
+- name: Copy VPN client pqpk public key
+  copy:
+    src: /tmp/pqpk.client
+    dest: /var/opt/sqvpn/client.vpn-public/pqpk
+
+- name: Copy VPN client wgpk public keys
+  copy:
+    src: /tmp/wgpk.client
+    dest: /var/opt/sqvpn/client.vpn-public/wgpk

@@ -1,11 +1,11 @@
 ---
-- name: Generate VPN client private key
+- name: Generate VPN client secret key
   command: sqvpn genkey client.vpn-secret
   args:
     chdir: /var/opt/sqvpn
     creates: /var/opt/sqvpn/client.vpn-secret
 
-- name: Generate VPN client public key
+- name: Extract VPN client public key
   command: sqvpn pubkey client.vpn-secret client.vpn-public
   args:
     chdir: /var/opt/sqvpn

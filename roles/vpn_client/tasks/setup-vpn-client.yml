@@ -9,7 +9,7 @@
     name: sqvpn-client
     enabled: no
 
-- name: Stopped service sqvpn-client
+- name: Stop service sqvpn-client
   service:
     name: sqvpn-client
     state: stopped

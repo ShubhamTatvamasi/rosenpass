@@ -1,0 +1,9 @@
+---
+- name: Extract VPN Server Public Keys
+  fetch:
+    src: /var/opt/sqvpn/server.vpn-public/{{ item }}
+    dest: /tmp/{{ item }}.server
+    flat: yes
+  with_items:
+    - pqpk
+    - wgpk

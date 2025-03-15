@@ -1,6 +1,6 @@
 ---
 - name: Deploy VPN Client
-  hosts: all
+  hosts: client
   roles:
     - role: vpn
     - role: vpn_client

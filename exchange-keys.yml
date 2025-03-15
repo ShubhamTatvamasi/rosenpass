@@ -1,0 +1,5 @@
+---
+- name: Exchange Public Keys
+  hosts: all
+  roles:
+    - role: exchange_keys
