@@ -1,0 +1,6 @@
+---
+- name: Deploy VPN Server
+  hosts: all
+  roles:
+    - role: vpn
+    - role: vpn_server

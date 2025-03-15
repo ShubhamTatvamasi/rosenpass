@@ -1,0 +1,12 @@
+---
+- name: Generate VPN server private key
+  command: sqvpn genkey server.vpn-secret
+  args:
+    chdir: /var/opt/sqvpn
+    creates: /var/opt/sqvpn/server.vpn-secret
+
+- name: Generate VPN server public key
+  command: sqvpn pubkey server.vpn-secret server.vpn-public
+  args:
+    chdir: /var/opt/sqvpn
+    creates: /var/opt/sqvpn/server.vpn-public

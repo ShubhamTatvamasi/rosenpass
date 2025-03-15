@@ -1,0 +1,36 @@
+---
+- name: Install required packages
+  apt:
+    update_cache: yes
+    name:
+      - wireguard-tools
+      - resolvconf
+
+- name: Download VPN {{ vpn_version }}
+  unarchive:
+    src: https://github.com/rosenpass/rosenpass/releases/download/v{{ vpn_version }}/rosenpass-x86_64-linux-{{ vpn_version }}.tar
+    dest: /tmp
+    remote_src: yes
+
+- name: Copy vpn to executable path
+  copy:
+    src: /tmp/bin/{{ item }}
+    dest: /usr/local/bin/{{ item }}
+    remote_src: yes
+    mode: '+x'
+  with_items:
+    - rp
+    - rosenpass
+
+- name: Rename rp to sqvpn
+  command: mv /usr/local/bin/rp /usr/local/bin/sqvpn
+
+- name: Create sqvpn directory
+  file:
+    path: /var/opt/sqvpn
+    state: directory
+
+- name: Delete vpn tmp files
+  file:
+    state: absent
+    path: /tmp/bin

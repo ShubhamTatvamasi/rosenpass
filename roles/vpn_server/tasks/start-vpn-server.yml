@@ -1,0 +1,16 @@
+---
+- name: Copy sqvpn service file
+  template:
+    src: sqvpn.service.j2
+    dest: "/etc/systemd/system/sqvpn.service"
+
+- name: Enable service sqvpn
+  service:
+    name: sqvpn
+    enabled: yes
+
+- name: Restart service sqvpn
+  service:
+    name: sqvpn
+    state: restarted
+  

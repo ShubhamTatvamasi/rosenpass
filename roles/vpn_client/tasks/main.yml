@@ -1,0 +1,3 @@
+---
+- import_tasks: generate-client-keys.yml
+  become: yes
