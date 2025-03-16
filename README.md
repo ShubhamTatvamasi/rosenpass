@@ -2,7 +2,8 @@
 
 https://rosenpass.eu/docs/rosenpass-tool/start/
 
-UDP Port: 9999
+RP UDP Port: 9999 \
+WG UDP Port: 10000
 
 Download rosenpass:
 ```bash

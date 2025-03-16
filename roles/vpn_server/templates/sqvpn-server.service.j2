@@ -9,7 +9,7 @@ WorkingDirectory=/var/opt/sqvpn
 ExecStart=sqvpn \
   exchange server.vpn-secret \
   dev quantum-vpn0 \
-  listen {{ vpn_server_ip }}:{{ vpn_server_port }} \
+  listen 0.0.0.0:{{ vpn_server_port }} \
   peer client.vpn-public \
   allowed-ips {{ allowed_ips }}/{{ cidr }}
 
